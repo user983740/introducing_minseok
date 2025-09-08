@@ -9,7 +9,7 @@
   --bar-inset:0;
   --bar-opacity:.95;
   --bar-radius:9999px;
-  --hl-arrow-h:16px;           /* 화살표 두께 */
+  --hl-arrow-h:8px;           /* 화살표 두께 */
   --hl-arrow-top:10px;         /* 위에서 얼마나 떨어질지 */
   --hl-arrow-color:#111827;    /* 검은색 화살표 */
   --hl-stem:90px;              /* 세로 연결선 기본 높이 */
@@ -100,9 +100,9 @@ h2.section-title::after{
   content:"";
   position:absolute; right:-24px; top:50%; transform:translateY(-50%);
   /* ▶ 모양 삼각형 */
-  border-left: 24px solid var(--hl-arrow-color);
-  border-top:  calc(var(--hl-arrow-h)/2) solid transparent;
-  border-bottom: calc(var(--hl-arrow-h)/2) solid transparent;
+  border-left: 40px solid var(--hl-arrow-color);
+  border-top:  calc(var(--hl-arrow-h)*2.2) solid transparent;
+  border-bottom: calc(var(--hl-arrow-h)*2.2) solid transparent;
 }
 
 /* 마일스톤: --x(%)로 가로 위치만 지정 */
