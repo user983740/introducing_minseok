@@ -62,6 +62,55 @@ p{ margin:0 0 16px; line-height:1.8; }
 .title-sub{
   text-align:center; margin:10px 0 0; color:#6b7280; font-size:14px; letter-spacing:.02em;
 }
+.social-links{
+  position: absolute;
+  /* 상단 그라데이션 바(8px)보다 살짝 아래에 배치 */
+  top: calc(var(--bar-h, 8px) + 10px);
+  right: 16px;
+  display: flex;
+  gap: 10px;
+  z-index: 1;          /* 카드 내부에서 항상 위쪽 */
+}
+
+.social-links .icon{
+  --size: 36px;
+  width: var(--size);
+  height: var(--size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, color .15s ease, background .15s ease;
+}
+
+.social-links .icon:hover,
+.social-links .icon:focus-visible{
+  transform: translateY(-1px) scale(1.03);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 10px 20px rgba(0,0,0,.10);
+  outline: none;
+}
+
+.social-links .icon:active{
+  transform: translateY(0) scale(0.98);
+}
+
+/* 개별 톤 살짝 다르게(선택) */
+.social-links .icon.ig:hover{ color:#d04892; border-color:#d04892; }
+.social-links .icon.gh:hover{ color:#24292f; border-color:#24292f; }
+.social-links .icon.boj:hover{ color:#2db400; border-color:#2db400; }
+
+/* 좁은 화면에서 겹침 방지 */
+@media (max-width: 520px){
+  .social-links{ right: 12px; gap: 8px; top: calc(var(--bar-h, 8px) + 8px); }
+  .social-links .icon{ --size: 32px; }
+}
 
 /* 본문 */
 .content{ width:min(92vw, 1100px); margin:0 auto 24px; padding:0 16px; font-size:15px; }

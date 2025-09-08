@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Workout | Tags</title>
-    <link rel="stylesheet" href="./tags.css" />
+    <!-- 공통 스타일 -->
+    <link rel="stylesheet" href="./common.css" />
+    <!-- 이 페이지 전용 스타일 -->
+    <link rel="stylesheet" href="./workout.css" />
   </head>
   <body class="tag-page">
-    <!-- 스킵 링크: 키보드 사용자가 바로 본문으로 이동 -->
-    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
-
     <!-- 상단 헤더 + 브레드크럼 -->
     <header class="site-header">
       <div class="container">
@@ -20,119 +20,70 @@
           </ol>
         </nav>
         <h1 class="page-title">Workout</h1>
-        <p class="page-subtitle">내 운동 기록, 프로그램, 체크리스트를 한 곳에서.</p>
       </div>
     </header>
 
-    <!-- 히어로 섹션 (대표 이미지/문구) -->
-    <section class="hero">
+    <!-- 상단 바(헤더) 바로 아래: 3개의 동그라미 아이콘 스트립 -->
+    <section class="lift-strip">
       <div class="container">
-        <div class="hero__content">
-          <h2 class="hero__title">지속 가능한 루틴 만들기</h2>
-          <p class="hero__desc">
-            과부하(Progressive Overload)와 회복(Recovery)을 균형 있게. 이 템플릿은 다른 관심사 페이지에도
-            그대로 복제해 레이아웃만 재사용할 수 있게 설계했어요.
-          </p>
-        </div>
-        <figure class="hero__media" aria-label="운동 관련 대표 이미지">
-          <!-- 필요 시 로컬 이미지로 교체: ../assets/workout/hero.jpg -->
-          <img src="https://picsum.photos/800/500?grayscale&random=1" alt="덤벨과 운동 매트가 놓인 스튜디오" />
-        </figure>
-      </div>
-    </section>
+        <ul class="lift-grid" role="list">
+          <!-- 벤치프레스 -->
+          <li>
+            <button type="button"
+                    class="lift-btn bench"
+                    data-state="icon"
+                    data-pr="80"
+                    aria-pressed="false"
+                    aria-label="벤치프레스 PR 보기 (80kg)">
+              <span class="icon" aria-hidden="true">
+                <!-- 이미지 경로: tags/에서 images/로 한 단계 올라가므로 ../images/... -->
+                <img src="../images/benchpress.png"
+                     alt="벤치프레스 아이콘 이미지"
+                     loading="lazy" decoding="async" draggable="false" />
+              </span>
+              <span class="pr" aria-hidden="true">80&nbsp;kg</span>
+            </button>
+          </li>
 
-    <!-- 본문: 좌측(글) / 우측(사이드 정보) 2단 -->
-    <main id="main" class="container content-grid" tabindex="-1">
-      <article class="prose" aria-labelledby="section-overview">
-        <h2 id="section-overview">개요</h2>
-        <p>
-          여기에 본문을 작성하세요. 분할(가슴/등/하체), 주당 빈도, RIR/리프팅 노트, 영양 메모 등을 자유롭게
-          정리합니다. 다른 <em>interest</em> 페이지도 이 구조를 그대로 복제해 제목과 내용만 바꾸면 됩니다.
-        </p>
+          <!-- 스쿼트 -->
+          <li>
+            <button type="button"
+                    class="lift-btn squat"
+                    data-state="icon"
+                    data-pr="115"
+                    aria-pressed="false"
+                    aria-label="스쿼트 PR 보기 (115kg)">
+              <span class="icon" aria-hidden="true">
+                <img src="../images/squat.png"
+                     alt="스쿼트 아이콘 이미지"
+                     loading="lazy" decoding="async" draggable="false" />
+              </span>
+              <span class="pr" aria-hidden="true">115&nbsp;kg</span>
+            </button>
+          </li>
 
-        <h3>주간 루틴(예시)</h3>
-        <ul class="checklist">
-          <li><input type="checkbox" aria-label="가슴/삼두/복부"> 가슴 · 삼두 · 복부</li>
-          <li><input type="checkbox" aria-label="등/이두/복부"> 등 · 이두 · 복부</li>
-          <li><input type="checkbox" aria-label="하체/어깨"> 하체 · 어깨</li>
-          <li><input type="checkbox" aria-label="유산소 20~30분"> 유산소 20–30분</li>
+          <!-- 데드리프트 -->
+          <li>
+            <button type="button"
+                    class="lift-btn dead"
+                    data-state="icon"
+                    data-pr="135"
+                    aria-pressed="false"
+                    aria-label="데드리프트 PR 보기 (135kg)">
+              <span class="icon" aria-hidden="true">
+                <img src="../images/deadlift.png"
+                     alt="데드리프트 아이콘 이미지"
+                     loading="lazy" decoding="async" draggable="false" />
+              </span>
+              <span class="pr" aria-hidden="true">135&nbsp;kg</span>
+            </button>
+          </li>
         </ul>
-
-        <h3>메모</h3>
-        <p>
-          오늘의 컨디션, 볼륨(PR), 통증 여부, 수면/수분/식단 같은 맥락 정보를 적어두면 다음 주에 계획을
-          조정하기 쉬워집니다.
-        </p>
-      </article>
-
-      <aside class="sidebar" aria-labelledby="section-aside">
-        <h2 class="visually-hidden" id="section-aside">보조 정보</h2>
-
-        <section class="card">
-          <h3 class="card__title">Quick Facts</h3>
-          <ul class="kv">
-            <li><span>목표</span><strong>근기능 향상 & 체지방 관리</strong></li>
-            <li><span>분할</span><strong>가·삼·복 / 등·이·복 / 하·어</strong></li>
-            <li><span>휴식</span><strong>7–7.5h 수면</strong></li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h3 class="card__title">관련 태그</h3>
-          <ul class="taglist">
-            <li><a href="./Diet.html" class="tag">Diet</a></li>
-            <li><a href="./Running.html" class="tag">Running</a></li>
-            <li><a href="./Wellness.html" class="tag">Wellness</a></li>
-          </ul>
-        </section>
-      </aside>
-    </main>
-
-    <!-- 갤러리 -->
-    <section class="gallery">
-      <div class="container">
-        <h2>갤러리</h2>
-        <div class="grid">
-          <figure class="card img-card">
-            <img src="https://picsum.photos/600/400?random=2" alt="벤치프레스 장비" />
-            <figcaption>벤치 세팅</figcaption>
-          </figure>
-          <figure class="card img-card">
-            <img src="https://picsum.photos/600/400?random=3" alt="풀업 바" />
-            <figcaption>풀업 바</figcaption>
-          </figure>
-          <figure class="card img-card">
-            <img src="https://picsum.photos/600/400?random=4" alt="스쿼트 랙" />
-            <figcaption>스쿼트 랙</figcaption>
-          </figure>
-          <figure class="card img-card">
-            <img src="https://picsum.photos/600/400?random=5" alt="케이블 머신" />
-            <figcaption>케이블 머신</figcaption>
-          </figure>
-        </div>
+        <p class="lift-hint">위 사진들은 모두 ai 생성 이미지입니다.</p>
       </div>
     </section>
 
-    <!-- 자료/링크 -->
-    <section class="resources">
-      <div class="container">
-        <h2>참고 자료</h2>
-        <ul class="link-list">
-          <li><a href="#" aria-disabled="true">프로그램 스프레드시트 (추가 예정)</a></li>
-          <li><a href="#" aria-disabled="true">식단 템플릿 (추가 예정)</a></li>
-          <li><a href="#" aria-disabled="true">부상 예방 체크리스트 (추가 예정)</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="container">
-        <a class="back-to-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})">맨 위로</a>
-      </div>
-      <script>
-        // 연도 자동 표기 (선택)
-        document.querySelectorAll('[data-year]').forEach(n => n.textContent = new Date().getFullYear());
-      </script>
-    </footer>
+    <!-- 페이지 전용 스크립트 -->
+    <script src="./workout.js"></script>
   </body>
 </html>
