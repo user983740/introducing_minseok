@@ -114,26 +114,16 @@ h2.section-title::after{
   transform: translateX(-50%);  /* 가운데 정렬 */
   text-align:center;
 }
-.milestone .dot{
-  width:14px; height:14px; background:var(--hl-arrow-color);
-  border-radius:9999px; transform: translateY(-50%);
-  box-shadow:0 0 0 3px rgba(17,24,39,.12);
-  transition: transform .12s ease, box-shadow .12s ease;
-}
 .milestone .stem{
   width:2px; height: var(--hl-stem); margin: 4px auto 0;
   background: var(--hl-arrow-color);
 }
 .milestone .label{
-  margin-top:8px; padding:8px 12px;
+  padding:8px 12px 0px;
+  margin-bottom: px;
   background:#fff; border:1px solid #e5e7eb; border-radius:12px;
   box-shadow:0 8px 18px rgba(0,0,0,.06);
   font-size:14px; line-height:1.6; color:#374151;
-}
-/* 호버 강조 */
-.milestone:hover .dot{
-  transform: translateY(-50%) scale(1.2);
-  box-shadow:0 0 0 5px rgba(17,24,39,.18);
 }
 
 /* ========== Interests: 비눗방울 구름 ========== */
