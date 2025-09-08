@@ -4,8 +4,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="reset.css" rel="stylesheet" />
-    <title>Document</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
+    <title>Minseok</title>
   </head>
-  <body></body>
-  <script src="index.js"></script>
+  <body>
+    <!-- 상단 타이틀 카드(기존 무드 유지) -->
+    <div class="title-card">
+      <h1 class="title"><span>It's me...</span></h1>
+      <p class="title-sub">about 민석</p>
+    </div>
+
+    <!-- 간단 소개 -->
+    <main class="content">
+      <p>
+        안녕하세요! 저는 서울대학교 물리천문학부 물리학과 24학번 서민석입니다!<br>
+        03년생 23살이고 현재 컴퓨터 공학과로 전과를 준비중입니다!<br>
+      </p>
+    </main>
+
+    <!-- 타임라인: 가로 검은 화살표 + 아래로 내려가는 연표 -->
+    <div class="timeline container">
+      <h2 class="section-title">Timeline</h2>
+
+      <div class="hl-timeline" aria-label="horizontal timeline">
+        <!-- 검은 가로 화살표 본체 -->
+        <div class="hl-arrow" aria-hidden="true"></div>
+
+        <!-- 마일스톤: --x 로 가로 위치(%)만 지정 -->
+        <div class="milestone" style="--x: 8%;">
+          <div class="dot"></div>
+          <div class="stem"></div>
+          <div class="label"><time>2019</time> 고등학교 입학</div>
+        </div>
+
+        <div class="milestone" style="--x: 33%;">
+          <div class="dot"></div>
+          <div class="stem"></div>
+          <div class="label"><time>2021</time> 동아리 활동 시작</div>
+        </div>
+
+        <div class="milestone" style="--x: 62%;">
+          <div class="dot"></div>
+          <div class="stem"></div>
+          <div class="label"><time>2024</time> 대학 입학</div>
+        </div>
+
+        <div class="milestone" style="--x: 88%;">
+          <div class="dot"></div>
+          <div class="stem"></div>
+          <div class="label"><time>2025</time> CS 전과 준비</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interests: 비눗방울 구름 -->
+    <div class="interests container">
+      <h2 class="section-title">Interests</h2>
+      <div class="bubble-cloud" id="bubble-cloud">
+        <!-- size만( --r ) 바꿔 크기 조절, 위치는 --x / --y(%) -->
+        <a class="bubble" href="tags/algorithms.html" style="--r:120px; --x:16%; --y:18%;">Algorithms</a>
+        <a class="bubble" href="tags/react.html"      style="--r:90px;  --x:40%; --y:26%;">React</a>
+        <a class="bubble" href="tags/verilog.html"    style="--r:100px; --x:68%; --y:14%;">Verilog</a>
+        <a class="bubble" href="tags/fitness.html"    style="--r:80px;  --x:82%; --y:38%;">Fitness</a>
+        <a class="bubble" href="tags/travel.html"     style="--r:110px; --x:28%; --y:56%;">Travel</a>
+        <a class="bubble" href="tags/writing.html"    style="--r:85px;  --x:57%; --y:54%;">Writing</a>
+        <a class="bubble" href="tags/physics.html"    style="--r:95px;  --x:10%; --y:62%;">Physics</a>
+      </div>
+      <p class="interest-hint">버블 위에 마우스를 올리면 반짝입니다. 페이지로 이동하려면 클릭!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container">
+      <p>© 2025 Minseok. All rights reserved.</p>
+      <p>E-mail: <a href="sms029317@gmail.com">sms029317.gmail.com</a></p>
+      <p>Number: 010-4676-0293</p>
+      <p class="last">Last updated: <time id="last-updated"></time></p>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
 </html>
