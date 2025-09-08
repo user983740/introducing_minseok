@@ -78,64 +78,6 @@ h2.section-title::after{
   border-radius:3px; opacity:.5;
 }
 
-/* ========== 가로 타임라인(검은 화살표) ========== */
-.timeline{ padding:24px 0 56px; }
-.hl-timeline{
-  position:relative;
-  height: calc(var(--hl-arrow-top) + var(--hl-arrow-h) + var(--hl-stem) + 110px);
-  /* overflow visible: 화살촉이 밖으로 나가도 보이게 */
-  overflow:visible;
-}
-
-/* 화살표 본체: 왼쪽 각지고, 오른쪽은 뾰족 화살촉 */
-.hl-arrow{
-  position:absolute; left:0; right:24px;          /* 오른쪽을 조금 남겨 화살촉 공간 확보 */
-  top: var(--hl-arrow-top);
-  height: var(--hl-arrow-h);
-  background: var(--hl-arrow-color);
-  border-top-left-radius: 0; border-bottom-left-radius: 0;   /* 왼쪽 각지게 */
-  border-top-right-radius: 0; border-bottom-right-radius: 0;
-}
-.hl-arrow::after{
-  content:"";
-  position:absolute; right:-24px; top:50%; transform:translateY(-50%);
-  /* ▶ 모양 삼각형 */
-  border-left: 40px solid var(--hl-arrow-color);
-  border-top:  calc(var(--hl-arrow-h)*2.2) solid transparent;
-  border-bottom: calc(var(--hl-arrow-h)*2.2) solid transparent;
-}
-
-/* 마일스톤: --x(%)로 가로 위치만 지정 */
-.milestone{
-  --x: 50%;
-  position:absolute;
-  left: var(--x);
-  top: calc(var(--hl-arrow-top) + var(--hl-arrow-h)/2);
-  transform: translateX(-50%);  /* 가운데 정렬 */
-  text-align:center;
-}
-.milestone .dot{
-  width:14px; height:14px; background:var(--hl-arrow-color);
-  border-radius:9999px; transform: translateY(-50%);
-  box-shadow:0 0 0 3px rgba(17,24,39,.12);
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-.milestone .stem{
-  width:2px; height: var(--hl-stem); margin: 4px auto 0;
-  background: var(--hl-arrow-color);
-}
-.milestone .label{
-  margin-top:8px; padding:8px 12px;
-  background:#fff; border:1px solid #e5e7eb; border-radius:12px;
-  box-shadow:0 8px 18px rgba(0,0,0,.06);
-  font-size:14px; line-height:1.6; color:#374151;
-}
-/* 호버 강조 */
-.milestone:hover .dot{
-  transform: translateY(-50%) scale(1.2);
-  box-shadow:0 0 0 5px rgba(17,24,39,.18);
-}
-
 /* ========== Interests: 비눗방울 구름 ========== */
 .interests{ padding: 12px 0 56px; }
 .bubble-cloud{
