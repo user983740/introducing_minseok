@@ -22,7 +22,7 @@ body{
   background:#fafafa;
   color:var(--ink);
   font-family:'Noto Sans KR', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 .container{ width:min(92vw, 1100px); margin:0 auto; padding:0 16px; }
 p{ margin:0 0 16px; line-height:1.8; }
@@ -97,6 +97,7 @@ h2.section-title::after{
   border-radius: 50%;
   display:flex; align-items:center; justify-content:center;
   text-decoration:none; font-weight:700; color:#2d2a25;
+  font-size: 18px;
   /* 비눗방울 질감 */
   background:
     radial-gradient(120% 120% at 30% 25%, rgba(255,255,255,.95) 0 35%, rgba(255,255,255,.2) 42%, rgba(255,255,255,0) 60%),
@@ -128,6 +129,6 @@ footer{
   margin-bottom: 10;
   text-align:center;
   color:#6b7280;
+  font-size: 10px;
   }
 footer p{ margin:0; line-height:1.8; }      /* 줄간격 조금 좁힘 */
-footer .last{ font-size:13px; }
