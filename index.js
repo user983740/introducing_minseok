@@ -44,7 +44,7 @@ function setupBubbleMotion() {
     const y = (yPct / 100) * h; // % 단위로 관리하여 컨테이너 크기 바뀌어도 어색x
 
     const angle = Math.random() * Math.PI * 2;
-    const speed = 70 + (Math.random() * 80 - 40);
+    const speed = 70 + (Math.random() * 80);
 
     return {
       el,
