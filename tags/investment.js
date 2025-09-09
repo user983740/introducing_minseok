@@ -24,14 +24,28 @@ nextBtn.addEventListener("click", () => {
   updateSlider();
 });
 
-// 카드 클릭 → 새 탭
 track.addEventListener("click", (e) => {
   const card = e.target.closest(".slide");
   if (!card) return;
-  const href = card.dataset.href;
-  if (href) window.open(encodeURI(href), "_blank", "noopener");
+  const file = card.dataset.file;
+  if (!file) return;
+
+  const href = researchHref(file);
+  window.open(href, "_blank", "noopener");
 });
 
 // 초기 실행
 window.addEventListener("load", updateSlider);
 window.addEventListener("resize", updateSlider);
+
+// ---- 경로 헬퍼: 로컬/배포 모두 동작 ----
+function basePath() {
+  // URL에서 introducing_minseok까지 포함된 prefix를 찾아 루트로 사용
+  const m = location.pathname.match(/^(.*\/introducing_minseok\/)/);
+  // 로컬에서 루트가 워크스페이스인 경우: "/…/introducing_minseok/" 반환
+  // Vercel 등 배포에서 사이트 루트가 introducing_minseok인 경우: null → "/"
+  return m ? m[1] : '/';
+}
+function researchHref(fileName) {
+  return `${basePath()}research/${encodeURIComponent(fileName)}`;
+}
