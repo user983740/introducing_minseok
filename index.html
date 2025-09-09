@@ -4,55 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="reset.css" rel="stylesheet" />
-    <!-- 폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet" />
     <title>Minseok</title>
   </head>
-  <body>
-    <!-- 소셜 아이콘 -->
-  <nav class="social-links" aria-label="Social profiles">
-    <a class="icon ig" href="https://instagram.com/mmm_in_227" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-      <!-- 카메라 아이콘 -->
-      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-        <rect x="3.5" y="3.5" width="17" height="17" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-        <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
-        <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
-      </svg>
-    </a>
-
-    <a class="icon gh" href="https://github.com/user983740" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-      <!-- 깃허브 마크(단색) -->
-      <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
-        <path fill="currentColor"
-          d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
-             0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
-             -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
-             .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
-             -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82
-             .44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95
-             .29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8
-             c0-4.42-3.58-8-8-8z"/>
-      </svg>
-    </a>
-
-    <a class="icon boj" href="https://www.acmicpc.net/user/100gimchii" target="_blank" rel="noopener noreferrer" aria-label="BOJ Profile">
-      <!-- BOJ 텍스트 모노그램 -->
-      <svg viewBox="0 0 32 32" width="18" height="18" aria-hidden="true">
-        <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
-        <text x="16" y="19" text-anchor="middle" font-size="10" font-weight="700" font-family="system-ui, 'Noto Sans KR', sans-serif" fill="currentColor">BOJ</text>
-      </svg>
-    </a>
-  </nav>
+  <body class="dark">
+    <!-- 상단 타이틀 카드 + 소셜 -->
     <div class="title-card">
-  <h1 class="title"><span>It's me...</span></h1>
-  <p class="title-sub">about 민석</p>
-</div>
+      <nav class="social-links" aria-label="Social profiles">
+        <a class="icon ig" href="https://instagram.com/mmm_in_227" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="icon gh" href="https://github.com/user983740" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor"
+              d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
+                 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+                 -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+                 .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+                 -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82
+                 .44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95
+                 .29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8
+                 c0-4.42-3.58-8-8-8z"/>
+          </svg>
+        </a>
+        <a class="icon boj" href="https://www.acmicpc.net/user/100gimchii" target="_blank" rel="noopener noreferrer" aria-label="BOJ Profile">
+          <svg viewBox="0 0 32 32" width="18" height="18" aria-hidden="true">
+            <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <text x="16" y="19" text-anchor="middle" font-size="10" font-weight="700" font-family="system-ui, 'Noto Sans KR', sans-serif" fill="currentColor">BOJ</text>
+          </svg>
+        </a>
+      </nav>
+
+      <h1 class="title"><span>It's me...</span></h1>
+      <p class="title-sub">about 민석</p>
+    </div>
 
     <!-- 간단 소개 -->
-    <main class="content">
+    <main class="content container">
       <p>
         안녕하세요! 저는 서울대학교 물리천문학부 물리학과 24학번 서민석입니다!<br>
         03년생 23살이고 현재 컴퓨터 공학과로 전과를 준비중입니다!<br>
@@ -63,21 +55,23 @@
     <!-- Interests: 비눗방울 구름 -->
     <div class="interests container">
       <h2 class="section-title">Interests</h2>
+
       <div class="bubble-cloud" id="bubble-cloud">
-        <!-- size만( --r ) 바꿔 크기 조절, 위치는 --x / --y(%) -->
+        <!-- index에서 programming으로 이동 시 BOJ 핸들을 URL 쿼리로 함께 전달 -->
         <a class="bubble" href="tags/workout.html" style="--r:140px; --x:12%; --y:18%;">Workout</a>
-        <a class="bubble" href="tags/programming.html"      style="--r:160px;  --x:40%; --y:30%;">Programming</a>
-        <a class="bubble" href="tags/investment.html"    style="--r:130px; --x:72%; --y:18%;">Investment</a>
-        <a class="bubble" href="tags/alcohol.html"    style="--r:90px;  --x:82%; --y:50%;">Alcohol</a>
-        <a class="bubble" href="tags/game.html"     style="--r:115px; --x:20%; --y:63%;">Game</a>
+        <a class="bubble" href="tags/programming.html?boj=100gimchii" style="--r:160px; --x:40%; --y:30%;">Programming</a>
+        <a class="bubble" href="tags/investment.html" style="--r:130px; --x:72%; --y:18%;">Investment</a>
+        <a class="bubble" href="tags/alcohol.html" style="--r:90px;  --x:82%; --y:50%;">Alcohol</a>
+        <a class="bubble" href="tags/game.html" style="--r:115px; --x:20%; --y:63%;">Game</a>
       </div>
+
       <p class="interest-hint">버블 위에 마우스를 올리면 반짝입니다. 페이지로 이동하려면 클릭!</p>
     </div>
 
     <!-- Footer -->
     <footer class="container">
       <p>© 2025 Minseok. All rights reserved.</p>
-      <p>E-mail: <a href="mailto:sms029317@gmail.com">sms029317.gmail.com</a></p>
+      <p>E-mail: <a href="mailto:sms029317@gmail.com">sms029317@gmail.com</a></p>
       <p>Number: 010-4676-0293</p>
       <p class="last">Last updated: <time id="last-updated"></time></p>
     </footer>

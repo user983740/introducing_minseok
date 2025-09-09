@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Investment</title>
+    <link rel="stylesheet" href="./common.css"/>
+    <link rel="stylesheet" href="./investment.css"/>
+  </head>
+  <body>
+    <!-- 브레드크럼 -->
+    <header class="site-header">
+      <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumb">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li aria-current="page">Investment</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Investment</h1>
+      </div>
+    </header>
+
+    <main class="container stack">
+      <!-- SNUVALUE -->
+      <section class="inv-card snuvalue">
+        <a class="snu-link" href="https://snuvalue.com/" target="_blank" rel="noopener">
+          <img class="snu-logo" src="../images/snuvalue.png" alt="SNUVALUE 로고" />
+          <div class="snu-body">
+            <h2 class="section-underline">SNUVALUE</h2>
+            <p class="muted">2024.03 ~ 2024.12 활동</p>
+            <p class="go">사이트 바로가기 ↗</p>
+          </div>
+        </a>
+      </section>
+
+      <section class="inv-card research">
+        <h2 class="section-underline">리서치</h2>
+        <div class="slider-container">
+          <button class="nav-btn prev" id="prevBtn">‹</button>
+          <div class="slider-window">
+            <ul class="slider-track" id="sliderTrack">
+              <li class="slide" data-href="../research/와이랩_서민석.xlsx">와이랩</li>
+              <li class="slide" data-href="../research/태경케미컬_서민석_수정.xlsx">태경케미컬</li>
+              <li class="slide" data-href="../research/쿠팡_서민석.xlsx">쿠팡</li>
+              <li class="slide" data-href="../research/nintendo_서민석.xlsx">nintendo</li>
+              <li class="slide" data-href="../research/NHN KCP_서민석.xlsx">NHN</li>
+              <li class="slide" data-href="../research/게임 산업 보고서.xlsx">게임</li>
+              <li class="slide" data-href="../research/조선산업_구현,채미,도형,민석_최종.xlsx">조선</li>
+              <li class="slide" data-href="../research/에스앤디_서민석.xlsx">에스앤디</li>
+              <li class="slide" data-href="../research/펄어비스_서민석.xlsx">펄어비스</li>
+              <li class="slide" data-href="../research/크루즈 산업 보고서.xlsx">크루즈</li>
+              <li class="slide" data-href="../research/국내 건설_서민석.xlsx">국내 건설</li>
+              <li class="slide" data-href="../research/ASPN_Report.xlsx">ASPN</li>
+              <li class="slide" data-href="../research/세경하이테크_서민석.xlsx">세경하이테크</li>
+              <li class="slide" data-href="../research/파마리서치_서민석.xlsx">파마리서치</li>
+            </ul>
+          </div>
+          <button class="nav-btn next" id="nextBtn">›</button>
+        </div>
+      </section>
+
+      <!-- 소개 텍스트 -->
+      <section class="inv-card">
+        <p>강력한 수요를 기반으로 하는 고성장 한국 소비재 주식에 관심 있습니다.</p>
+        <p>당장은 정보 접근성의 한계로 한국 주식만 관심을 가지고 있으며 향후에 한국 산업재, 미국 주식을 리서치하고 투자할 계획이 있습니다.</p>
+      </section>
+
+      <!-- 관심 종목 -->
+      <section class="inv-card">
+        <h2 class="section-underline">현재 관심 종목</h2>
+        <ul class="bullets">
+          <li>삼양식품</li>
+          <li>에이피알</li>
+          <li>파마리서치</li>
+          <li>GS피앤엘</li>
+          <li>조선주</li>
+          <li>LNG 섹터</li>
+        </ul>
+        <p class="small muted">
+          이 리스트는 말 그대로 관심 종목이며 이 중 일부는 보유중이고 일부는 보유중이지 않습니다.<br>
+          확신을 가지고 비중을 크게 실은 종목도 있고 아직은 확신이 없어 관심만 가지고 공부중인 종목도 있습니다.<br>
+          투자에 참고하지 마시고 제 관심사를 이해하는 정도로만 받아들여주세요.
+        </p>
+      </section>
+    </main>
+
+    <p class="footer-note">© 2025 Seo Minseok</p>
+    <script src="./investment.js" defer></script>
+  </body>
+</html>
