@@ -173,11 +173,11 @@ h2.section-title::after{
 .interest-hint{ margin-top:8px; color:#6b7280; font-size:13px; }
 
 /* Footer */
-footer{ 
-  margin:28px 0 px;
-  margin-bottom: 10;
-  text-align:center;
-  color:#6b7280;
+footer{
+  margin: 28px 0 20px;  /* 위 28px, 좌우 0, 아래 20px */
+  text-align: center;
+  color: #6b7280;
   font-size: 10px;
-  }
-footer p{ margin:0; line-height:1.8; }      /* 줄간격 조금 좁힘 */
+}
+footer p{ margin: 0; line-height: 1.8; }
+

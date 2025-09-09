@@ -3,87 +3,77 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Workout | Tags</title>
-    <!-- 공통 스타일 -->
+    <title>Workout</title>
     <link rel="stylesheet" href="./common.css" />
-    <!-- 이 페이지 전용 스타일 -->
     <link rel="stylesheet" href="./workout.css" />
   </head>
   <body class="tag-page">
-    <!-- 상단 헤더 + 브레드크럼 -->
+    <!-- 브레드크럼 내비게이션 -->
     <header class="site-header">
       <div class="container">
         <nav aria-label="breadcrumb" class="breadcrumb">
           <ol>
             <li><a href="../index.html">Home</a></li>
-            <li aria-current="page">Workout</li>
+            <li aria-current="page">> Workout</li>
           </ol>
         </nav>
         <h1 class="page-title">Workout</h1>
       </div>
     </header>
 
-    <!-- 상단 바(헤더) 바로 아래: 3개의 동그라미 아이콘 스트립 -->
+    <!-- 3개의 동그라미 아이콘 스트립 -->
     <section class="lift-strip">
       <div class="container">
         <ul class="lift-grid" role="list">
-          <!-- 벤치프레스 -->
           <li>
-            <button type="button"
-                    class="lift-btn bench"
-                    data-state="icon"
-                    data-pr="80"
-                    aria-pressed="false"
-                    aria-label="벤치프레스 PR 보기 (80kg)">
+            <button type="button" class="lift-btn bench" data-state="icon" data-pr="80" aria-pressed="false" aria-label="벤치프레스 PR 보기 (80kg)">
               <span class="icon" aria-hidden="true">
-                <!-- 이미지 경로: tags/에서 images/로 한 단계 올라가므로 ../images/... -->
-                <img src="../images/benchpress.png"
-                     alt="벤치프레스 아이콘 이미지"
-                     loading="lazy" decoding="async" draggable="false" />
+                <img src="../images/benchpress.png" alt="벤치프레스 아이콘 이미지" loading="lazy" decoding="async" draggable="false" />
               </span>
+              <span class="hover-title" aria-hidden="true">Bench Press</span>
               <span class="pr" aria-hidden="true">80&nbsp;kg</span>
             </button>
           </li>
-
-          <!-- 스쿼트 -->
           <li>
-            <button type="button"
-                    class="lift-btn squat"
-                    data-state="icon"
-                    data-pr="115"
-                    aria-pressed="false"
-                    aria-label="스쿼트 PR 보기 (115kg)">
+            <button type="button" class="lift-btn squat" data-state="icon" data-pr="115" aria-pressed="false" aria-label="스쿼트 PR 보기 (115kg)">
               <span class="icon" aria-hidden="true">
-                <img src="../images/squat.png"
-                     alt="스쿼트 아이콘 이미지"
-                     loading="lazy" decoding="async" draggable="false" />
+                <img src="../images/squat.png" alt="스쿼트 아이콘 이미지" loading="lazy" decoding="async" draggable="false" />
               </span>
+              <span class="hover-title" aria-hidden="true">Squat</span>
               <span class="pr" aria-hidden="true">115&nbsp;kg</span>
             </button>
           </li>
-
-          <!-- 데드리프트 -->
           <li>
-            <button type="button"
-                    class="lift-btn dead"
-                    data-state="icon"
-                    data-pr="135"
-                    aria-pressed="false"
-                    aria-label="데드리프트 PR 보기 (135kg)">
+            <button type="button" class="lift-btn dead" data-state="icon" data-pr="135" aria-pressed="false" aria-label="데드리프트 PR 보기 (135kg)">
               <span class="icon" aria-hidden="true">
-                <img src="../images/deadlift.png"
-                     alt="데드리프트 아이콘 이미지"
-                     loading="lazy" decoding="async" draggable="false" />
+                <img src="../images/deadlift.png" alt="데드리프트 아이콘 이미지" loading="lazy" decoding="async" draggable="false" />
               </span>
+              <span class="hover-title" aria-hidden="true">Deadlift</span>
               <span class="pr" aria-hidden="true">135&nbsp;kg</span>
             </button>
           </li>
         </ul>
-        <p class="lift-hint">위 사진들은 모두 ai 생성 이미지입니다.</p>
       </div>
     </section>
 
-    <!-- 페이지 전용 스크립트 -->
+    <section class="running">
+      <div class="container">
+        <div class="running-wrap">
+          <div class="running-text">
+            <h2 class="section-underline">Running</h2>
+            <p class="running-desc">
+              러닝을 본격적으로 시작한지 3개월 정도밖에 없어서 기록이 없습니다!<br />
+              가을에 10km 대회 계획이 있어요 :)
+            </p>
+          </div>
+          <div class="running-image">
+            <img src="../images/running.png" alt="달리는 사람의 일러스트/사진" loading="lazy" decoding="async" draggable="false" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">위 사진들은 모두 ai 생성 이미지입니다.</p>
     <script src="./workout.js"></script>
   </body>
 </html>

@@ -136,5 +136,9 @@ function setupBubbleMotion() {
 document.addEventListener('DOMContentLoaded', () => {
   setupBubbleSparkle();
   setLastUpdated();
-  setupBubbleMotion();
+
+  const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+  if (!prefersReduced) {
+    setupBubbleMotion();
+  }
 });
