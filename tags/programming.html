@@ -3,19 +3,97 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Workout | Tags</title>
-    <link rel="stylesheet" href="./tags.css" />
+    <title>Programming | Tags</title>
+    <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="./programming.css" />
   </head>
   <body class="tag-page">
-    <!-- 상단 헤더 + 브레드크럼 -->
     <header class="site-header">
       <div class="container">
         <nav aria-label="breadcrumb" class="breadcrumb">
           <ol>
             <li><a href="../index.html">Home</a></li>
-            <li aria-current="page">Workout</li>
+            <li aria-current="page">Programming</li>
           </ol>
         </nav>
-        <h1 class="page-title">Workout</h1>
+        <h1 class="page-title">Programming</h1>
+        <p class="page-subtitle">Dev Projects · Courses · PS</p>
       </div>
     </header>
+
+    <main class="container programming">
+      <!-- 1) Dev Projects -->
+      <section class="section">
+        <h2 class="section-title">Dev Projects</h2>
+        <ul class="proj-grid" role="list">
+          <!-- 카드 예시 1 -->
+          <li class="card">
+            <div class="card-head">
+              <h3 class="card-title">Introducing Minseok (Vercel)</h3>
+              <ul class="tags" role="list">
+                <li>HTML</li><li>CSS</li><li>JS</li>
+              </ul>
+            </div>
+            <p class="card-desc">개인 소개/태그 사이트. 반응형 그리드·접근성·감속 모드 대응.</p>
+            <div class="card-foot">
+              <a class="btn" href="https://introducing-minseok..." target="_blank" rel="noopener noreferrer">Live</a>
+              <a class="btn ghost" href="https://github.com/user983740" target="_blank" rel="noopener noreferrer">Repo</a>
+            </div>
+          </li>
+
+          <!-- 카드 예시 2 -->
+          <li class="card">
+            <div class="card-head">
+              <h3 class="card-title">Workout Tag</h3>
+              <ul class="tags" role="list">
+                <li>UI Motion</li><li>ARIA</li>
+              </ul>
+            </div>
+            <p class="card-desc">리프트 아이콘 ↔ PR 토글, 러닝 섹션. 검은 오버레이/키보드 포커스 대응.</p>
+            <div class="card-foot">
+              <a class="btn" href="./workout.html">Open</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 2) Courses -->
+      <section class="section">
+        <h2 class="section-title">Courses</h2>
+        <div class="course-grid">
+          <article class="course">
+            <h3 class="course-title">Logic Design (2024 Fall)</h3>
+            <p class="course-meta">Verilog · ALU 미니 프로젝트</p>
+          </article>
+          <article class="course">
+            <h3 class="course-title">Programming Languages (2025 Spring)</h3>
+            <p class="course-meta">OCaml · Type Checking · M 언어</p>
+          </article>
+          <article class="course">
+            <h3 class="course-title">Probability & Statistics</h3>
+            <p class="course-meta">Bayes · F-test · 추론</p>
+          </article>
+          <!-- 필요 시 더 추가 -->
+        </div>
+      </section>
+
+      <!-- 3) PS -->
+      <section class="section">
+        <h2 class="section-title">PS (Problem Solving)</h2>
+        <div class="ps">
+          <div class="ps-meta">
+            <span class="chip">Baekjoon Platinum 5</span>
+            <a class="btn small" href="https://www.acmicpc.net/user/100gimchii" target="_blank" rel="noopener noreferrer">BOJ Profile</a>
+          </div>
+          <ul class="ps-list">
+            <li><strong>세그먼트 없이 1517</strong> — 투포인터/정렬 관찰로 접근 힌트</li>
+            <li><strong>트리 DP 1949</strong> — 인접 독립집합 dp1/dp2</li>
+            <li><strong>위상정렬/사이클 판별</strong> — 큐 기반 진입차수 0</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container">© 2025 Minseok. Programming tag.</footer>
+  </body>
+</html>

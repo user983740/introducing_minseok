@@ -64,3 +64,18 @@ body{
   margin-inline: 4px;
   color: var(--muted);
 }
+
+/* 태그 페이지(공용)도 세로 플렉스 레이아웃 */
+body.tag-page{
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 컨텐츠가 적어도 footer는 바닥 + 아래 20px */
+body.tag-page footer,
+body.tag-page footer.container{
+  margin-top: auto;
+  margin-bottom: 20px;
+}
