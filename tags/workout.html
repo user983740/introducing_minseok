@@ -10,7 +10,6 @@
   <body class="tag-page">
     <!-- 브레드크럼 내비게이션 -->
     <header class="site-header">
-      <div class="container">
         <nav aria-label="breadcrumb" class="breadcrumb">
           <ol>
             <li><a href="../index.html">Home</a></li>
@@ -18,15 +17,14 @@
           </ol>
         </nav>
         <h1 class="page-title">Workout</h1>
-      </div>
     </header>
 
-    <!-- 3개의 동그라미 아이콘 스트립 -->
-    <section class="lift-strip">
-      <div class="container">
-        <ul class="lift-grid" role="list">
+    <!-- 스벤데 중량들 -->
+    <section class="container">
+      <h2>Personal Records</h2>
+        <ul class="prs" role="list">
           <li>
-            <button type="button" class="lift-btn bench" data-state="icon" data-pr="80" aria-pressed="false" aria-label="벤치프레스 PR 보기 (80kg)">
+            <button type="button" class="lift-btn" data-state="icon" data-pr="80" aria-pressed="false" aria-label="벤치프레스 PR 보기 (80kg)">
               <span class="icon" aria-hidden="true">
                 <img src="../images/benchpress.png" alt="벤치프레스 아이콘 이미지" loading="lazy" decoding="async" draggable="false" />
               </span>
@@ -35,7 +33,7 @@
             </button>
           </li>
           <li>
-            <button type="button" class="lift-btn squat" data-state="icon" data-pr="115" aria-pressed="false" aria-label="스쿼트 PR 보기 (115kg)">
+            <button type="button" class="lift-btn" data-state="icon" data-pr="115" aria-pressed="false" aria-label="스쿼트 PR 보기 (115kg)">
               <span class="icon" aria-hidden="true">
                 <img src="../images/squat.png" alt="스쿼트 아이콘 이미지" loading="lazy" decoding="async" draggable="false" />
               </span>
@@ -44,7 +42,7 @@
             </button>
           </li>
           <li>
-            <button type="button" class="lift-btn dead" data-state="icon" data-pr="135" aria-pressed="false" aria-label="데드리프트 PR 보기 (135kg)">
+            <button type="button" class="lift-btn" data-state="icon" data-pr="135" aria-pressed="false" aria-label="데드리프트 PR 보기 (135kg)">
               <span class="icon" aria-hidden="true">
                 <img src="../images/deadlift.png" alt="데드리프트 아이콘 이미지" loading="lazy" decoding="async" draggable="false" />
               </span>
@@ -53,27 +51,27 @@
             </button>
           </li>
         </ul>
-      </div>
     </section>
 
-    <section class="running">
-      <div class="container">
-        <div class="running-wrap">
+    <div class="divider"></div>
+
+    <section class="container">
+        <div class="running">
           <div class="running-text">
-            <h2 class="section-underline">Running</h2>
-            <p class="running-desc">
+            <h2>Running</h2>
+            <p class="running-content">
               러닝을 본격적으로 시작한지 3개월 정도밖에 없어서 기록이 없습니다!<br />
-              가을에 10km 대회 계획이 있어요 :)
+              10월 26일에 10km 대회에 처음 나가봅니다!<br>
+              60분 내 완주를 목표로 열심히 연습 중이에요:)
             </p>
           </div>
           <div class="running-image">
             <img src="../images/running.png" alt="달리는 사람의 일러스트/사진" loading="lazy" decoding="async" draggable="false" />
           </div>
         </div>
-      </div>
     </section>
 
-    <p class="footer-note">위 사진들은 모두 ai 생성 이미지입니다.</p>
+    <footer>위 사진들은 모두 ai 생성 이미지입니다.</footer>
     <script src="./workout.js"></script>
   </body>
 </html>
