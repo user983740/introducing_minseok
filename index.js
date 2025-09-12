@@ -1,55 +1,44 @@
-// 1) Interests 버블에 "반짝" 하이라이트가 마우스 위치를 따라오게.
-function setupBubbleSparkle() {
-  const bubbles = document.querySelectorAll('.bubble');
-  bubbles.forEach(b => {
-    b.addEventListener('mousemove', (e) => {
-      const r = b.getBoundingClientRect();
-      const x = e.clientX - r.left;
-      const y = e.clientY - r.top;
-      b.style.setProperty('--mx', `${x}px`);
-      b.style.setProperty('--my', `${y}px`);
-    });
-  });
-}
-
-// 2) Footer의 Last updated 표시(문서 수정 시각 사용).
+// 1) Footer의 Last updated 표시(문서 수정 시각 사용).
 function setLastUpdated() {
   const el = document.getElementById('last-updated');
-  if (!el) return;
   const d = new Date(document.lastModified || Date.now());
   const pad = (n) => String(n).padStart(2, '0');
   const txt = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
   el.textContent = txt;
 }
 
-// 3) 비눗방울 물리(벽/서로 튕김: 완전탄성충돌 + 속도 1.3배)
+// 2) 비눗방울 물리(벽/서로 튕김: 완전탄성충돌)
 function setupBubbleMotion() {
   const cloud = document.getElementById('bubble-cloud');
-  if (!cloud) return;
-
   const els = Array.from(cloud.querySelectorAll('.bubble'));
 
   const state = els.map(el => {
     const cs = getComputedStyle(el);
-    const dStr = cs.getPropertyValue('--r') || el.style.getPropertyValue('--r');
+
+    // 반지름 불러 오기
+    const dStr = cs.getPropertyValue('--r').trim();
     const diameter = parseFloat(dStr);
     const radius = diameter / 2;
 
-    const xPct = parseFloat(el.style.getPropertyValue('--x'));
-    const yPct = parseFloat(el.style.getPropertyValue('--y'));
+    // 초기 위치 불러 오기
+    const xStr = cs.getPropertyValue('--x').trim();
+    const yStr = cs.getPropertyValue('--y').trim();
+
+    const xPct = parseFloat(xStr);
+    const yPct = parseFloat(yStr);
 
     const w = cloud.clientWidth;
     const h = cloud.clientHeight;
-    const x = (xPct / 100) * w; // % 단위로 관리하여 컨테이너 크기 바뀌어도 어색x
-    const y = (yPct / 100) * h; // % 단위로 관리하여 컨테이너 크기 바뀌어도 어색x
+
+    // %를 px로 환산
+    const x = (xPct / 100) * w;
+    const y = (yPct / 100) * h;
 
     const angle = Math.random() * Math.PI * 2;
     const speed = 70 + (Math.random() * 80);
 
     return {
-      el,
-      x,
-      y,
+      el, x, y,
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
       r: radius
@@ -58,6 +47,7 @@ function setupBubbleMotion() {
 
   let last = performance.now();
 
+  // 속도 벡터를 법선(nx, ny)에 대해 반사
   function reflect(vx, vy, nx, ny) {
     const dot = vx * nx + vy * ny;
     return [vx - 2 * dot * nx, vy - 2 * dot * ny];
@@ -70,7 +60,7 @@ function setupBubbleMotion() {
     const w = cloud.clientWidth;
     const h = cloud.clientHeight;
 
-    // 위치 업데이트 + 벽 충돌(속력 보존)
+    // 위치 업데이트 + 벽 충돌
     for (const b of state) {
       b.x += b.vx * dt;
       b.y += b.vy * dt;
@@ -81,7 +71,7 @@ function setupBubbleMotion() {
       if (b.y > h-b.r){ b.y = h - b.r;   b.vy *= -1; }
     }
 
-    // 버블끼리 충돌: 완전탄성(각자의 속력 magnitude 보존, 법선 성분 반전)
+    // 버블간 충돌 (완전탄성 근사)
     for (let i = 0; i < state.length; i++) {
       for (let j = i + 1; j < state.length; j++) {
         const a = state[i], b = state[j];
@@ -94,21 +84,22 @@ function setupBubbleMotion() {
           const nx = dx / dist;
           const ny = dy / dist;
 
-          // 1) 겹침 해소: 반반 밀기
+          // 침투 해소(반반 밀기)
           const overlap = minDist - dist;
           const half = overlap / 2;
           a.x -= nx * half; a.y -= ny * half;
           b.x += nx * half; b.y += ny * half;
 
-            const [avx, avy] = reflect(a.vx, a.vy, nx, ny);
-            const [bvx, bvy] = reflect(b.vx, b.vy, nx, ny);
-            a.vx = avx; a.vy = avy;
-            b.vx = bvx; b.vy = bvy;
+          // 속도 반사
+          const [avx, avy] = reflect(a.vx, a.vy, nx, ny);
+          const [bvx, bvy] = reflect(b.vx, b.vy, nx, ny);
+          a.vx = avx; a.vy = avy;
+          b.vx = bvx; b.vy = bvy;
         }
       }
     }
 
-    // 화면 반영: 내부 px 좌표 → %로 바꿔 CSS 변수에 넣기
+    // 렌더링: px → %로 변환하여 CSS 변수 업데이트
     for (const b of state) {
       const xPct = (b.x / w) * 100;
       const yPct = (b.y / h) * 100;
@@ -119,11 +110,16 @@ function setupBubbleMotion() {
     requestAnimationFrame(step);
   }
 
+  // 리사이즈 시 현재 % 좌표를 다시 px로 환산해 내부 상태 갱신
   function onResize() {
     const w = cloud.clientWidth, h = cloud.clientHeight;
     for (const b of state) {
-      const xPct = parseFloat(b.el.style.getPropertyValue('--x')) || 0;
-      const yPct = parseFloat(b.el.style.getPropertyValue('--y')) || 0;
+      // computedStyle → inline → 기본값 '50%'
+      const cs = getComputedStyle(b.el);
+      const xStr = cs.getPropertyValue('--x').trim();
+      const yStr = cs.getPropertyValue('--y').trim();
+      const xPct = parseFloat(xStr);
+      const yPct = parseFloat(yStr);
       b.x = (xPct / 100) * w;
       b.y = (yPct / 100) * h;
     }
@@ -134,7 +130,6 @@ function setupBubbleMotion() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  setupBubbleSparkle();
   setLastUpdated();
 
   const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
