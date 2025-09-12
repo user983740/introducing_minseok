@@ -1,21 +1,23 @@
-/* Investment 전용 카드 */
-.inv-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:20px;
-  box-shadow:var(--shadow);
+.snuvalue-box{
+   display:flex; 
+   gap:14px; 
+   align-items:center; 
+   text-decoration:none;
+    color:inherit; 
+  }
+.logo{ 
+  width:56px; 
+  height:56px; 
+  border-radius:50%; 
+  object-fit:cover; 
+  border:1px solid var(--line); 
 }
-
-/* SNUVALUE */
-.snuvalue .snu-link{ display:flex; gap:14px; align-items:center; text-decoration:none; color:inherit; }
-.snuvalue .snu-logo{ width:56px; height:56px; border-radius:50%; object-fit:cover; border:1px solid var(--line); }
-.snuvalue .go{ margin:4px 0 0; font-weight:800; color:var(--accentG); }
 
 /* 리서치 슬라이더 */
 .slider-container {
   position: relative;
   overflow: hidden;
+  margin: 3vh auto;
 }
 
 .slider-window {
@@ -28,10 +30,10 @@
 }
 
 .slide {
-  flex: 0 0 calc(100% / 3);   /* 한 화면에 3개 */
-  max-width: calc(100% / 3);
+  flex: 0 0 25%;
+  max-width: 25%;
   margin: 0;
-  height: 80px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,6 +47,22 @@
 .slide:hover {
   background: #fff;
   transform: translateY(-3px);
+}
+
+/* 화면 크기에 따른 슬라이드 개수 조정 */
+@media (max-width: 900px) {
+  .slide {
+      flex: 0 0 calc(100% / 3);
+      max-width: calc(100% / 3);
+  }
+}
+
+/* 화면 크기에 따른 슬라이드 개수 조정 */
+@media (max-width: 600px) {
+  .slide {
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
 }
 
 /* 버튼 (좌우 겹쳐 표시) */

@@ -61,9 +61,15 @@ body{
 /* 본문 내용 */
 .content{ 
   margin:0; 
-  font-size:16px; 
+  font-size:15px; 
   color: var(--ink); 
-  line-height: 1.8;
+  line-height: 1.618;
+}
+
+a{
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
 }
 
 footer{
