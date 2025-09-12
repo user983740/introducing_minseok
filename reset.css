@@ -1,48 +1,52 @@
+/* root 변수 = 전역 변수 */
 :root{
-  --ink:#000000;
-  --accent:#efbe1c;
+  --ink:#000000;   
   --card-bg:#ffffff;
   --card-border:#e5e7eb;
   --bar-start:#2db400;
   --bar-end:#efbe1c;
-  --bar-h:8px;
-  --bar-inset:0;
-  --bar-opacity:.95;
-  --bar-radius:9999px;
-  --hl-arrow-h:8px;           /* 화살표 두께 */
-  --hl-arrow-top:10px;         /* 위에서 얼마나 떨어질지 */
-  --hl-arrow-color:#111827;    /* 검은색 화살표 */
-  --hl-stem:90px;              /* 세로 연결선 기본 높이 */
+  --bar-h:8px;              /* 그라데이션 바 높이 */
+  --bar-radius:9999px;      /* 둥근 모서리 */
+  --hl-arrow-h:8px;         /* 화살표 두께 */
+  --hl-arrow-top:10px;      /* 위에서 얼마나 떨어질지 */
+  --hl-arrow-color:#111827; /* 검은색 화살표 */
+  --hl-stem:90px;           /* 세로 연결선 기본 높이 */
 }
 
 /* 베이스 */
 *{ box-sizing:border-box; }
 body{
-  margin:0;
+  margin:0 0 20px;
   background:#fafafa;
   color:var(--ink);
   font-family:'Noto Sans KR', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  padding-bottom: 20px;
 }
-.container{ width:min(92vw, 1100px); margin:0 auto; padding:0 16px; }
+.container{ 
+  width:min(92vw, 1100px);
+  margin:0 auto; 
+  padding:1.5em 16px; 
+  font-size :16px;
+}
 p{ margin:0 0 16px; line-height:1.8; }
 
 /* 상단 타이틀 카드 */
 .title-card{
-  width:min(92vw, 1100px);
-  margin:80px auto 40px;
+  margin-top: 10vh;
   background:var(--card-bg);
-  border:2px solid var(--card-border);
+  border:1px solid var(--card-border);
   border-radius:20px;
   box-shadow:0 30px 60px rgba(0,0,0,.06);
   padding:32px 40px;
   position:relative;
   overflow:hidden;
 }
+/* 상단 그라데이션 바 */
 .title-card::before{
-  content:""; position:absolute; top:0;
-  left:var(--bar-inset); right:var(--bar-inset);
-  height:var(--bar-h); opacity:var(--bar-opacity);
+  content:""; 
+  position:absolute;
+  top:0;
+  left:0; right:0;
+  height:var(--bar-h); 
   background:linear-gradient(90deg, var(--bar-start), var(--bar-end));
   border-top-left-radius:var(--bar-radius);
   border-top-right-radius:var(--bar-radius);
@@ -51,13 +55,14 @@ p{ margin:0 0 16px; line-height:1.8; }
   margin:0; text-align:center;
   font-family:'DM Serif Display', Georgia, 'Times New Roman', serif;
   font-size:clamp(44px, 6vw, 72px);
-  line-height:1.1; letter-spacing:-0.01em;
+  line-height:1.1;
 }
+/* 밑줄 */
 .title > span{
   background: linear-gradient(transparent 60%, rgba(239,190,28,.35) 0) no-repeat;
-  background-size: 100% 0.45em;
-  background-position: 0 85%;
-  padding: 0 .12em;
+  background-size: 100% 0.6em;
+  background-position: 0 0.45em;
+  padding: 0 0.12em;
 }
 .title-sub{
   text-align:center; margin:10px 0 0; color:#6b7280; font-size:14px; letter-spacing:.02em;
@@ -77,22 +82,20 @@ p{ margin:0 0 16px; line-height:1.8; }
   width: var(--size);
   height: var(--size);
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;      /* 수직 중앙 정렬 */
+  justify-content: center;  /* 수평 중앙 정렬 */
   border-radius: 9999px;
   background: #fff;
   border: 1px solid var(--card-border);
   box-shadow: 0 6px 14px rgba(0,0,0,.06);
   color: var(--ink);
   text-decoration: none;
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, color .15s ease, background .15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .social-links .icon:hover,
 .social-links .icon:focus-visible{
   transform: translateY(-1px) scale(1.03);
-  border-color: var(--accent);
-  color: var(--accent);
   box-shadow: 0 10px 20px rgba(0,0,0,.10);
   outline: none;
 }
@@ -112,42 +115,49 @@ p{ margin:0 0 16px; line-height:1.8; }
   .social-links .icon{ --size: 32px; }
 }
 
-/* 본문 */
-.content{ width:min(92vw, 1100px); margin:0 auto 24px; padding:0 16px; font-size:15px; }
+/* ========== Interests: 비눗방울 구름 ========== */
+.interests-box{ padding: 12px 0 24px; }
 
 /* 섹션 타이틀 */
-h2.section-title{
-  margin:0 0 16px;
-  font-size:28px; font-weight:700; letter-spacing:-0.02em;
-  display:inline-block; position:relative;
+.section-title{
+  margin:0 0 10px;
+  font-size:28px; 
+  font-weight:750; 
+  letter-spacing:-0.02em;
+  display:inline-block; 
+  position:relative;
 }
-h2.section-title::after{
-  content:""; position:absolute; left:0; right:0; bottom:-4px; height:3px;
+.section-title::after{
+  content:"";
+  position:absolute; 
+  left:0; 
+  right:0; 
+  bottom:-4px; 
+  height:3px;
   background:var(--ink);
-  border-radius:3px; opacity:.5;
+  border-radius:3px; 
+  opacity:.5;
 }
 
-/* ========== Interests: 비눗방울 구름 ========== */
-.interests{ padding: 12px 0 56px; }
 .bubble-cloud{
-  position:relative; height: 420px;
-  border-radius: 18px;
-  background: radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.9), rgba(255,255,255,.6) 60%, rgba(255,255,255,.4));
-  box-shadow: inset 0 0 40px rgba(0,0,0,.03);
+  position: relative; 
+  height: 420px;
   overflow:hidden;
 }
 .bubble{
-  /* 공통 크기/위치: size만 --r으로 */
   --r: 100px; --x: 50%; --y: 50%;
   position:absolute;
   left: var(--x); top: var(--y);
   width: var(--r); height: var(--r);
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  display:flex; align-items:center; justify-content:center;
-  text-decoration:none; font-weight:700; color:#2d2a25;
+  display:flex;
+  align-items:center; 
+  justify-content:center;
+  text-decoration:none; 
+  font-weight:700; 
+  color:#2d2a25;
   font-size: 18px;
-  /* 비눗방울 질감 */
   background:
     radial-gradient(120% 120% at 30% 25%, rgba(255,255,255,.95) 0 35%, rgba(255,255,255,.2) 42%, rgba(255,255,255,0) 60%),
     radial-gradient(120% 120% at 70% 70%, rgba(173,216,230,.35), rgba(255,182,193,.30), rgba(144,238,144,.28), rgba(255,255,255,0) 70%);
@@ -159,18 +169,19 @@ h2.section-title::after{
 /* 반짝 하이라이트(마우스 위치 따라) */
 .bubble::after{
   content:"";
-  position:absolute; inset:-20%;
-  background: radial-gradient(200px 200px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.55), rgba(255,255,255,0) 45%);
+  position:absolute; 
+  inset:-20%;
   opacity:.0; transition: opacity .12s ease;
   border-radius:50%;
 }
 .bubble:hover{
-  transform: translate(-50%, -56%) scale(1.06);
-  box-shadow: 0 26px 42px rgba(0,0,0,.18), inset 0 0 26px rgba(255,255,255,.55);
+  transform: translate(-50%, -56%) scale(1.1);
   filter: saturate(130%);
 }
 .bubble:hover::after{ opacity:.9; }
 .interest-hint{ margin-top:8px; color:#6b7280; font-size:13px; }
+
+
 
 /* Footer */
 footer{
@@ -179,5 +190,5 @@ footer{
   color: #6b7280;
   font-size: 10px;
 }
-footer p{ margin: 0; line-height: 1.8; }
+footer p{ margin: 0; line-height: 1.8em; }
 

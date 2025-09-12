@@ -2,14 +2,14 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- meta 태그는 사이트에 대한 메타 데이터, viewport: 모바일 반응 페이지 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
     <link href="reset.css" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet" />
     <title>Minseok</title>
   </head>
-  <body class="dark">
+  <body>
     <!-- 상단 타이틀 카드 + 소셜 -->
-    <div class="title-card">
+    <div class="title-card container">
       <nav class="social-links" aria-label="Social profiles">
         <a class="icon ig" href="https://instagram.com/mmm_in_227" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
@@ -53,7 +53,7 @@
     </main>
 
     <!-- Interests: 비눗방울 구름 -->
-    <div class="interests container">
+    <div class="interests-box container">
       <h2 class="section-title">Interests</h2>
 
       <div class="bubble-cloud" id="bubble-cloud">
@@ -64,12 +64,10 @@
         <a class="bubble" href="tags/alcohol.html" style="--r:90px;  --x:82%; --y:50%;">Alcohol</a>
         <a class="bubble" href="tags/game.html" style="--r:115px; --x:20%; --y:63%;">Game</a>
       </div>
-
-      <p class="interest-hint">버블 위에 마우스를 올리면 반짝입니다. 페이지로 이동하려면 클릭!</p>
     </div>
 
     <!-- Footer -->
-    <footer class="container">
+    <footer>
       <p>© 2025 Minseok. All rights reserved.</p>
       <p>E-mail: <a href="mailto:sms029317@gmail.com">sms029317@gmail.com</a></p>
       <p>Number: 010-4676-0293</p>
