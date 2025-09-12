@@ -115,9 +115,6 @@ p{ margin:0 0 16px; line-height:1.8; }
   .social-links .icon{ --size: 32px; }
 }
 
-/* ========== Interests: 비눗방울 구름 ========== */
-.interests-box{ padding: 12px 0 24px; }
-
 /* 섹션 타이틀 */
 .section-title{
   margin:0 0 10px;
@@ -138,6 +135,9 @@ p{ margin:0 0 16px; line-height:1.8; }
   border-radius:3px; 
   opacity:.5;
 }
+
+/* ========== Interests: 비눗방울 구름 ========== */
+.interests-box{ padding: 12px 0 24px; }
 
 .bubble-cloud{
   position: relative; 
@@ -180,8 +180,6 @@ p{ margin:0 0 16px; line-height:1.8; }
 }
 .bubble:hover::after{ opacity:.9; }
 .interest-hint{ margin-top:8px; color:#6b7280; font-size:13px; }
-
-
 
 /* Footer */
 footer{
