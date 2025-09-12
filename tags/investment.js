@@ -38,14 +38,7 @@ track.addEventListener("click", (e) => {
 window.addEventListener("load", updateSlider);
 window.addEventListener("resize", updateSlider);
 
-// ---- 경로 헬퍼: 로컬/배포 모두 동작 ----
-function basePath() {
-  // URL에서 introducing_minseok까지 포함된 prefix를 찾아 루트로 사용
-  const m = location.pathname.match(/^(.*\/introducing_minseok\/)/);
-  // 로컬에서 루트가 워크스페이스인 경우: "/…/introducing_minseok/" 반환
-  // Vercel 등 배포에서 사이트 루트가 introducing_minseok인 경우: null → "/"
-  return m ? m[1] : '/';
-}
+// ---- 경로 헬퍼 삭제하고 절대경로로 고정 ----
 function researchHref(fileName) {
-  return `${basePath()}research/${encodeURIComponent(fileName)}`;
+  return `/research/${encodeURIComponent(fileName)}`;  // public/research/* 를 그대로 가리킴
 }
